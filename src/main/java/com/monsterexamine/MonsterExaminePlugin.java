@@ -15,8 +15,8 @@ import net.runelite.client.plugins.Plugin;
 import net.runelite.client.plugins.PluginDescriptor;
 import net.runelite.client.ui.overlay.OverlayManager;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 @Slf4j
 @PluginDescriptor(
@@ -38,7 +38,7 @@ public class MonsterExaminePlugin extends Plugin
 	private MonsterExamineClient httpClient;
 
 	int lastId = -1;
-	List<Integer> seenIds = new ArrayList<>();
+	Set<Integer> seenIds = new HashSet<>();
 
 	@Override
 	protected void startUp() throws Exception
@@ -63,12 +63,12 @@ public class MonsterExaminePlugin extends Plugin
 		}
 	}
 
-	public void setSeenIds(List<Integer> seenIds)
+	public void setSeenIds(Set<Integer> seenIds)
 	{
 		this.seenIds = seenIds;
 	}
 
-	public List<Integer> getSeenIds()
+	public Set<Integer> getSeenIds()
 	{
 		return this.seenIds;
 	}
